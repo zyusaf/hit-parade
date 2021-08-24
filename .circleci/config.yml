@@ -23,12 +23,11 @@ jobs:
       - run: npm run build
       - aws-s3/sync:
           from: build
-          to: 's3://hit-parade-e-49-zy/'
+          to: "s3://hit-parade-e-49-zy"
           arguments: |
             --acl public-read \
             --cache-control "max-age=86400" \
             --overwrite: true
-          overwrite: true
 workflows:
   version: 2.1
   build:
